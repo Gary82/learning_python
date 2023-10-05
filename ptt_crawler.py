@@ -1,11 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urlparse
 
-crawler_url = "https://www.ptt.cc/bbs/MacShop/index4005.html"
-html = requests.get(crawler_url)
+crawler_url = "https://www.ptt.cc"
+mac_shop_path = "/bbs/MacShop"
+html = requests.get(crawler_url+mac_shop_path)
 bsObj = BeautifulSoup(html.content, "html.parser")
-base_url = urlparse(crawler_url).scheme+'://'+urlparse(crawler_url).netloc
 # 取得title
 title = bsObj.title
 print(title)
@@ -16,5 +15,5 @@ for tr in tr_list:
     if '[販售]' in tr_title:
         print(tr_title)
         tr_link = tr.find('div', {'class', 'title'}).find('a').get('href')
-        print(base_url+tr_link)
+        print(crawler_url+tr_link)
 
