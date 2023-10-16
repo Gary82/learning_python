@@ -4,39 +4,17 @@ from datetime import datetime
 
 
 class Product:
-    def __init__(self, title, url, date):
+    def __init__(self, title, url, date, model=None, specifications=None, guarantee=None,
+                 accessories=None, price=None, payment_methods=None, contact=None, note=None):
         self.title = title
         self.url = url
-        self.date = date
+        self.data = date
+        self.model = model
+        self.specifications = specifications
+        self.guarantee = guarantee
+        self.accessories = accessories
+        self.price = price
+        self.payment_methods = payment_methods
+        self.contact = contact
+        self.note = note
 
-    @property
-    def model(self):
-        return self.model
-
-    @property
-    def specifications(self):
-        return self.specifications
-
-    @property
-    def guarantee(self):
-        return self.guarantee
-
-    @property
-    def accessories(self):
-        return self.accessories
-
-    @property
-    def price(self):
-        return self.price
-
-    @property
-    def payment_methods(self):
-        return self.payment_methods
-
-    @property
-    def contact(self):
-        return self.contact
-
-    @property
-    def note(self):
-        return self.contact
