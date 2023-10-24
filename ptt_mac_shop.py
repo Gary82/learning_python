@@ -8,6 +8,7 @@ from product import Product
 def get_product():
     product_list = get_product_page()
     get_product_detail(product_list)
+    return product_list
 
 
 def get_product_page():
